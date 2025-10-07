@@ -5,15 +5,12 @@ conexao = criar_conexao()
 if conexao and conexao.is_connected():
 
     
-    cursor = conexao.cursor(dictionary=True)
+    cursor = conexao.cursor()
     modelo = ModelSQL(conexao=conexao, cursor=cursor)
-
-    resultado = modelo.consultar_na_tabela_usuarios(3)
-    for chave, valor in resultado.items():
-        campo = chave
-        valor = valor 
-        print (f"{campo}: {valor}")
-   
-
+    
+    # resultado = modelo.deletar_na_tabela_usuarios(3)
+    # if resultado:
+    #     print("usuário deletado com sucesso ")    
+    adicionar = modelo.inserir_na_tabela_usuarios('Igor', '55698569963', 21, 'igorteste12@gmail.com', 'senhateste1234', '11956897945')
 conexao.close()
 cursor.close()
