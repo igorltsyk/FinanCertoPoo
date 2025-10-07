@@ -8,8 +8,12 @@ if conexao and conexao.is_connected():
     cursor = conexao.cursor(dictionary=True)
     modelo = ModelSQL(conexao=conexao, cursor=cursor)
 
-    reusltado = modelo.consultar_na_tabela_usuarios(3)
-    
+    resultado = modelo.consultar_na_tabela_usuarios(3)
+    for chave, valor in resultado.items():
+        campo = chave
+        valor = valor 
+        print (f"{campo}: {valor}")
+   
 
 conexao.close()
 cursor.close()
