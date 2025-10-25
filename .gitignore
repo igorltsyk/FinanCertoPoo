@@ -1,5 +1,7 @@
 .env
+__pycache__/
 config/
 config
-database/
+conection.py
 teste.txt
+tests/
