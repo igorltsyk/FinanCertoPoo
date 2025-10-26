@@ -1,4 +1,4 @@
-from app.database.models import UsuarioModel
+from app.database.models.UsuarioModel import UsuarioModel
 from app.database.conection import criar_conexao
 
 conexao = criar_conexao()
@@ -17,14 +17,16 @@ class Controller:
 
         if dados_banco:
             if dados_banco.get('senha') == senha_fornecida:
+                print("Login Bem Sucedido")
                 return dados_banco
-            
+                
             else:
                 print("Login mal sucedido")
         else: 
             print("Você não tem cadastro")
             
-        #aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+# aaaaaaaaaaaaaaaaaaaaaaa
 
 
 
